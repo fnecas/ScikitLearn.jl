@@ -175,7 +175,7 @@ using ScikitLearn.CrossValidation: cross_val_score
 pipe = Pipelines.Pipeline([
      (:featurize, mapper),
      (:lm, LinearRegression())])
-round(cross_val_score(pipe, data, data[:salary]), 2)
+round.(cross_val_score(pipe, data, data[:salary]), digits=2)
 ```
 
 
